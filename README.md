@@ -1,5 +1,11 @@
 # Sql Server Windows Authentication
 
+# Lưu ý quan trọng
++ Sử dụng tên miền: Luôn sử dụng cú pháp DOMAIN\Username hoặc DOMAIN\GroupName để chỉ định tài khoản Windows.
++ Nguyên tắc đặc quyền tối thiểu: Chỉ cấp những quyền cần thiết để User thực hiện công việc, tránh cấp quyền quá rộng như sysadmin hoặc db_owner nếu không cần thiết.
++ Sử dụng nhóm: Thay vì cấp quyền cho từng tài khoản người dùng, hãy tạo các nhóm Windows (ví dụ: "IT Department", "Sales Team") và cấp quyền cho các nhóm này. Sau đó, chỉ cần thêm người dùng vào nhóm tương ứng trên Windows, việc quản lý sẽ trở nên dễ dàng và hiệu quả hơn.
+
+# Ưu điểm của đoạn script bên dưới
 + Chạy nhiều lần không báo lỗi.
 + Nếu login/user mismatch (hay gặp khi restore DB) thì tự sửa.
 + Chỉ cần đổi UserDb và MANH\ADMIN theo môi trường.
