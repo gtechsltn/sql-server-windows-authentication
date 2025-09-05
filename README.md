@@ -1,5 +1,9 @@
 # Sql Server Windows Authentication
 
++ Chạy nhiều lần không báo lỗi.
++ Nếu login/user mismatch (hay gặp khi restore DB) thì tự sửa.
++ Chỉ cần đổi UserDb và MANH\ADMIN theo môi trường.
+
 ```
 USE [master];
 GO
